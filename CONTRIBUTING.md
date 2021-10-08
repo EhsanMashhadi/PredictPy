@@ -2,24 +2,6 @@
 
 :+1: You are very welcome to contribute to this project :+1:
 
-
-#### Table Of Contents
-
-[Code of Conduct](#code-of-conduct)
-
-[What should I know before I get started?](#what-should-i-know-before-i-get-started)
-  * [Project and Packages](#project-and-packages)
-
-[How Can I Contribute?](#how-can-i-contribute)
-  * [Reporting Bugs](#reporting-bugs)
-  * [Your First Code Contribution](#your-first-code-contribution)
-  * [Pull Requests](#pull-requests)
-
-[Styleguides](#styleguides)
-  * [Git Commit Messages](#git-commit-messages)
-  * [Python Styleguide](#python-styleguide)
-
-
 ## Code of Conduct
 
 This project and everyone participating in it is governed by the [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
@@ -78,3 +60,13 @@ Describe you commit messages in detailed so it should be clear what has been don
 ### Python Styleguide
 
 All Python code should follow the [PEP8](https://www.python.org/dev/peps/pep-0008/) style guide.
+
+## OSS Policy
+
+It is important that any software components like libraries MUST have a license which is compatible with the MIT license. It is clear that every part of the contribution will be reviewed by maintainers and any part of the code which does not comply with the MIT license will not be merged.
+
+Your contributions should be made with the following confirmation:
+
+**I confirm that this contribution is made under the terms of the license found in the root directory of this repository's source tree and that I have the authority necessary to make this contribution on behalf of its copyright owner.**
+
+
