@@ -69,4 +69,8 @@ Your contributions should be made with the following confirmation:
 
 **I confirm that this contribution is made under the terms of the license found in the root directory of this repository's source tree and that I have the authority necessary to make this contribution on behalf of its copyright owner.**
 
+MIT is a permissive license allowing you to re-license the derivative work under any license. In general, when you combine the MIT License with any other open source license, the resulting derivative work will not be MIT License. When you combine Public Domain, or MIT Licensed components, the result derivative work can be MIT License.
+
+A more detailed graph of what licenses can be used with what licenses can be found [Here](dwheeler.com), and [Here](https://janelia-flyem.github.io/licenses.html).
+
 
