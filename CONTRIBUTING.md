@@ -71,6 +71,6 @@ Your contributions should be made with the following confirmation:
 
 MIT is a permissive license allowing you to re-license the derivative work under any license. In general, when you combine the MIT License with any other open source license, the resulting derivative work will not be MIT License. When you combine Public Domain, or MIT Licensed components, the result derivative work can be MIT License.
 
-A more detailed graph of what licenses can be used with what licenses can be found [Here](dwheeler.com), and [Here](https://janelia-flyem.github.io/licenses.html).
+A more detailed graph of what licenses can be used with what licenses can be found [Here](https://dwheeler.com/essays/floss-license-slide.html), and [Here](https://janelia-flyem.github.io/licenses.html).
 
 
