@@ -17,7 +17,7 @@ This project contain many models for predicting crypto and stock prices. It has 
 
 This section guides you through submitting a bug report for PredictPy.
 
-Before creating bug reports, please check the issues section to find if it is already reported.
+You can report any bug with the [issues](https://github.com/EhsanMashhadi/PredictPy/issues) section of this project, but before creating bug reports, please check that section to find if it is already reported.
 
 #### How Do I Submit A (Good) Bug Report?
 
