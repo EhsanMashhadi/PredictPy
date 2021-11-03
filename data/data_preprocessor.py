@@ -3,8 +3,7 @@
 from abc import ABC, abstractmethod
 
 
-class DataCatcher(ABC):
+class DataPreprocessor(ABC):
 
-    @abstractmethod
-    def get_data(self, symbol, start, end):
+    def preprocess(self, data):
         pass
