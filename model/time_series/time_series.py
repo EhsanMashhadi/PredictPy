@@ -24,12 +24,11 @@ class TimeSeries(object):
         self.forecast = self.model.predict(future)
         print(self.forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail())
 
-    def show_day_price(self, number_of_days):
-        print("The next {day} days price is: ".format(day=number_of_days))
-        intended_time = (datetime.today() + timedelta(days=number_of_days)).strftime("%Y-%m-%d")
-        print(intended_time)
-        output = self.forecast[self.forecast["ds"] == intended_time]["yhat"].item()
-        print(output)
+    def get_day_price(self, number_of_days):
+        intended_time = (datetime.today() + timedelta(days=number_of_days)).replace(hour=0, minute=0,
+                                                                                    second=0).strftime(
+            "%Y-%m-%d %H:%M:%S")
+        return self.forecast[self.forecast["ds"] == intended_time]["yhat"].item()
 
     def show_price_plot(self):
         plot_plotly(self.model, self.forecast).show()
