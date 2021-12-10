@@ -86,3 +86,5 @@ if __name__ == '__main__':
 
 # sudo docker build -t tag1 .
 # sudo docker run tag1 "ehsan"
+#docker run ehsanmashhadi/predictpy:v1.0.0 "rsm" "btc-usd" "2018-01-04"
+# docker pull ehsanmashhadi/predictpy:v1.0.0

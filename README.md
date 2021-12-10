@@ -47,7 +47,7 @@ This project is developed using [MVP](https://en.wikipedia.org/wiki/Model%E2%80%
 
 ## Setup
 
-In order to set up the project on your computer:
+**Building on your computer:**
 
 - Clone the repository
 - Install Python 3.8+
@@ -55,30 +55,45 @@ In order to set up the project on your computer:
 
     - Using CPU: ```pip install -r requirements-cpu.txt```
     - Using GPU: ```pip install -r requirements-gpu.txt```
-  
+
+**Using Docker:**
+- Installing Docker
+- Pulling the Docker image ```docker pull ehsanmashhadi/predictpy:v1.0.0```
+
+
 ## Run
 
 In order to run the project, you have different options:
 
-```python main.py "method" "currency" "start_date"```
+**Manually:** ```python main.py "method" "currency" "start_date"```
+
+**Docker** ```docker run ehsanmashhadi/predictpy:v1.0.0 "method" "currency" "start_date"```
 
 ### Examples:
 
-#### Using prophet time series to predict next 10 days analysis:
+### Using prophet time series to predict next 10 days analysis:
 
-``` python main.py "rsm" "btc-usd" "2018-01-04"```
+**Manually:** ``` python main.py "rsm" "btc-usd" "2018-01-04"```
 
-#### Using prophet time series to evaluate the model based on last 12 days:
+**Docker** ```docker run ehsanmashhadi/predictpy:v1.0.0 "rsm" "btc-usd" "2018-01-04"```
 
-```python main.py "tes" "btc-usd" "2018-01-04"```
+### Using prophet time series to evaluate the model based on last 12 days:
 
-#### Training transformer model (It may take long time to train the model):
+**Manually:** ```python main.py "tes" "btc-usd" "2018-01-04"```
 
-```python main.py "ttm" "btc-usd" "2014-01-04"```
+**Docker** ```docker run ehsanmashhadi/predictpy:v1.0.0 "tes" "btc-usd" "2018-01-04"```
 
-#### Evaluating the model using transformer model (You should train the transformer model first):
+### Training transformer model (It may take long time to train the model):
 
-```python main.py "pt" "btc-usd" "2014-01-04"```
+**Manually:** ```python main.py "ttm" "btc-usd" "2018-01-04"```
+
+**Docker** ```docker run ehsanmashhadi/predictpy:v1.0.0 "ttm" "btc-usd" "2018-01-04"```
+
+### Evaluating the model using transformer model (You should train the transformer model first):
+
+**Manually:** ```python main.py "pt" "btc-usd" "2014-01-04"```
+
+**Docker** ```docker run ehsanmashhadi/predictpy:v1.0.0 "pt" "btc-usd" "2014-01-04"```
 
 ## Run tests
 
