@@ -6,11 +6,16 @@ import numpy as np
 from data.data_preprocessor import DataPreprocessor
 
 
+# preprocessor class to do data preprocessing for transformer model
+
 class TransformerModelDataPreprocessor(DataPreprocessor):
     seq_len = 128
 
     def preprocess(self, data):
         data = self.reset_index(data)
+        return data
+
+    def split_data(self, data):
         data = self.percentage_change(data)
         self.drop_na_values(data)
         x_col = ['Open', 'High', 'Low', 'Close']

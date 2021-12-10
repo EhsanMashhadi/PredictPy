@@ -3,6 +3,8 @@
 from abc import ABC, abstractmethod
 
 
+# abstract class for different data preprocessor
+
 class DataPreprocessor(ABC):
 
     def preprocess(self, data):

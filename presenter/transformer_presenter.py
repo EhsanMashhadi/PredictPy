@@ -23,6 +23,9 @@ class TransformerPresenter(object):
     def preprocess_data(self):
         self.data = self.transformer_model_data_preprocessor.preprocess(self.data)
 
+    def split_data(self):
+        self.data = self.transformer_model_data_preprocessor.split_data(self.data)
+
     @check_data
     def show_data(self):
         self.data_statistic.show_data_statistic(self.data)
@@ -49,6 +52,5 @@ class TransformerPresenter(object):
                             y_val=self.data["y_val"], x_test=self.data["x_test"], y_test=self.data["y_test"])
 
     def show_result(self):
-        pred_data = self.model.predict(self.data["x_train"], self.data["x_val"], self.data["x_test"])
-        # concat = pd.concat([self.data["x_train"], self.data["y_train"]], axis=1)
-        self.model.plot_results(original_data=self.data["x_test"], data_pred=pred_data[0],type="training")
+        pred_data = self.model.predict(self.data["x_test"])
+        self.model.plot_results(original_data=self.data["y_test"], data_pred=pred_data, type="training")

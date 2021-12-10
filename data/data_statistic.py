@@ -4,6 +4,8 @@
 import plotly.graph_objects as go
 
 
+# showing data statistics and plotting results
+
 class DataStatistic(object):
     def show_data_statistic(self, data):
         print("\n")

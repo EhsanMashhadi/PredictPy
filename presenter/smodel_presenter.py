@@ -27,6 +27,10 @@ class SeriesModelPresenter(object):
         self.data = self.smodel_data_preprocessor.preprocess(self.data)
 
     @check_data
+    def split_data(self, test_months=12):
+        self.data = self.smodel_data_preprocessor.split_data(self.data, test_months)
+
+    @check_data
     def plot_data(self):
         self.data_statistic.plot_data(self.data, "ds", "y")
 
@@ -42,7 +46,7 @@ class SeriesModelPresenter(object):
     @check_data
     @check_model
     def predict_model(self, period=10):
-        self.model.predict(period=period)
+        self.model.predict_future(period=period)
 
     @check_data
     @check_model
@@ -54,3 +58,11 @@ class SeriesModelPresenter(object):
 
     def show_price_components_plot(self):
         self.model.show_price_components_plot()
+
+    def train(self):
+        self.model = TimeSeries(self.data["train"])
+        self.model.fit_model()
+
+    def evaluate(self, test_months):
+        forecast = self.model.predict_period(self.data["test"].head(test_months))
+        self.model.evaluate_model(self.data["test"]["y"], forecast["yhat"])

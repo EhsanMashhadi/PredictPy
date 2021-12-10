@@ -3,6 +3,8 @@
 from abc import ABC, abstractmethod
 
 
+# abstract class for different data catchers
+
 class DataCatcher(ABC):
 
     @abstractmethod

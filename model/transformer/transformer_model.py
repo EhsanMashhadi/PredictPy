@@ -51,7 +51,7 @@ class TransformerModel:
                                                       save_best_only=True, verbose=1)
         history = self.model.fit(x_train, y_train,
                                  batch_size=batch_size,
-                                 epochs=35,
+                                 epochs=10,
                                  callbacks=[callback],
                                  validation_data=(x_val, y_val))
         print(history)
@@ -75,10 +75,8 @@ class TransformerModel:
         print('Validation Data - Loss: {:.4f}, MAE: {:.4f}, MAPE: {:.4f}'.format(val_eval[0], val_eval[1], val_eval[2]))
         print('Test Data - Loss: {:.4f}, MAE: {:.4f}, MAPE: {:.4f}'.format(test_eval[0], test_eval[1], test_eval[2]))
 
-    def predict(self, x_train, x_val, x_test):
+    def predict(self, x_test):
         train_pred = self.model.predict(x_test)
-        # val_pred = self.model.predict(x_val)
-        # test_pred = self.model.predict(x_test)
         return train_pred
 
     def plot_results(self, original_data, data_pred, type):
@@ -86,8 +84,11 @@ class TransformerModel:
         st = fig.suptitle("Transformer + TimeEmbedding Model", fontsize=10)
         st.set_y(0.92)
         ax11 = fig.add_subplot(311)
-        ax11.plot(np.arange(self.seq_len, data_pred.shape[0] + self.seq_len), data_pred, linewidth=3,
-                  label='Predicted IBM Closing Returns')
+        # ax11.plot(np.arange(self.seq_len, data_pred.shape[0] + self.seq_len), data_pred, linewidth=3,
+        #           label='Predicted IBM Closing Returns')
+        ax11.plot(original_data, label='IBM Closing Returns')
+        # ax11.plot(data_pred, label='IBM Predicted Closing Returns')
+
         ax11.set_title(type, fontsize=18)
         ax11.set_xlabel('Date')
         ax11.set_ylabel('IBM Closing Returns')

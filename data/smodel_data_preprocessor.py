@@ -3,6 +3,8 @@
 from data.data_preprocessor import DataPreprocessor
 
 
+# preprocessor class to do data preprocessing for prophet series model
+
 class SeriesModelDataPreprocessor(DataPreprocessor):
 
     def preprocess(self, data):
@@ -13,3 +15,8 @@ class SeriesModelDataPreprocessor(DataPreprocessor):
         data = data[["Date", "Open"]]
         data.columns = ["ds", "y"]
         return data
+
+    def split_data(self, data, test_months=12):
+        train = data.drop(data.index[-test_months:])
+        test = data.tail(test_months)
+        return {"train": train, "test": test}

@@ -4,10 +4,9 @@ from data.data_catcher import DataCatcher
 import yfinance as yf
 
 
+# yahoo finance data catcher to download different datasets
+
 class YFinanceDataCatcher(DataCatcher):
     def get_data(self, symbol, start, end):
         data = yf.download(symbol, start, end)
         return data
-
-
-
